@@ -1,0 +1,337 @@
+/* 1) Bilheteira - BASE (Desktop) */
+.ticket-booth {
+    background: url("/img/fundo.png") center center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.ticket-booth::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.booth-content {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+    margin-top: -60px;
+}
+
+/* imagem da bilheteira */
+.booth-img {
+    display: block;
+    max-height: 70vh;
+    height: auto;
+    width: auto;
+}
+
+/* titulo */
+.booth-title {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-garamond);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-title-main);
+    color: var(--color-blue);
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.35);
+    letter-spacing: 0.04em;
+}
+
+/* texto */
+.booth-text {
+    position: absolute;
+    top: 42%;
+    left: 40%;
+    transform: translateX(-32%);
+    font-family: var(--font-lato);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-excerpt);
+    color: var(--color-white);
+    text-align: center;
+    max-width: 200px;
+}
+
+/* botao */
+.btn-ticket {
+    position: absolute;
+    bottom: 13%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-garamond);
+    font-style: italic;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-button);
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.icon {
+    position: absolute;
+    width: 70px;
+    height: auto;
+}
+
+/* ANIMACAO TICKET */
+.ticket-container {
+    position: absolute;
+    right: 31%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 0;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.ticket-img-booth {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 115px;
+    height: auto;
+    cursor: pointer;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.ticket-img-booth:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+@keyframes reveal-ticket {
+    0% {
+        height: 0;
+        transform: translateY(0);
+    }
+    100% {
+        height: 160px;
+        transform: translateY(160px);
+    }
+}
+
+.reveal-ticket {
+    animation: reveal-ticket 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* ANIMACOES OBJETOS SALTITANTES */
+@keyframes bounce-crazy-1 {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    25% { transform: translate(150px, -100px) rotate(180deg) scale(1.2); }
+    50% { transform: translate(-80px, -50px) rotate(360deg) scale(0.9); }
+    75% { transform: translate(100px, 80px) rotate(540deg) scale(1.1); }
+    100% { transform: translate(0, 0) rotate(720deg) scale(1); }
+}
+
+@keyframes bounce-crazy-2 {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    25% { transform: translate(-120px, 90px) rotate(-180deg) scale(0.8); }
+    50% { transform: translate(200px, -120px) rotate(-360deg) scale(1.3); }
+    75% { transform: translate(-150px, 60px) rotate(-540deg) scale(0.9); }
+    100% { transform: translate(0, 0) rotate(-720deg) scale(1); }
+}
+
+@keyframes bounce-crazy-3 {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    20% { transform: translate(180px, 120px) rotate(90deg) scale(1.4); }
+    40% { transform: translate(-100px, -80px) rotate(270deg) scale(0.7); }
+    60% { transform: translate(80px, -140px) rotate(450deg) scale(1.2); }
+    80% { transform: translate(-160px, 100px) rotate(630deg) scale(0.85); }
+    100% { transform: translate(0, 0) rotate(720deg) scale(1); }
+}
+
+@keyframes bounce-crazy-4 {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    30% { transform: translate(-200px, -90px) rotate(-120deg) scale(1.1); }
+    60% { transform: translate(120px, 110px) rotate(-360deg) scale(0.9); }
+    90% { transform: translate(-80px, -130px) rotate(-600deg) scale(1.3); }
+    100% { transform: translate(0, 0) rotate(-720deg) scale(1); }
+}
+
+@keyframes twinkle-circus {
+    0%, 100% { filter: brightness(1) drop-shadow(0 0 5px rgba(255, 215, 0, 0.5)); }
+    50% { filter: brightness(1.5) drop-shadow(0 0 15px rgba(255, 215, 0, 0.9)); }
+}
+
+@keyframes glow-hat {
+    0%, 100% { filter: brightness(1) drop-shadow(0 0 5px rgba(196, 30, 58, 0.5)); }
+    50% { filter: brightness(1.3) drop-shadow(0 0 12px rgba(255, 105, 180, 0.8)); }
+}
+
+.icon-hat-top-left {
+    top: -60px;
+    left: -200px;
+    animation: bounce-crazy-1 8s infinite ease-in-out, glow-hat 2.2s infinite;
+}
+
+.icon-hat-bottom-right {
+    bottom: -40px;
+    right: -200px;
+    animation: bounce-crazy-2 7s infinite ease-in-out, glow-hat 1.8s infinite;
+    animation-delay: 1s, 0.6s;
+}
+
+.icon-star-top-right {
+    top: -40px;
+    right: -300px;
+    animation: bounce-crazy-3 9s infinite ease-in-out, twinkle-circus 2s infinite;
+    animation-delay: 0.5s, 0s;
+}
+
+.icon-star-bottom-left {
+    bottom: -40px;
+    left: -350px;
+    animation: bounce-crazy-4 6.5s infinite ease-in-out, twinkle-circus 2.5s infinite;
+    animation-delay: 1s, 0.8s;
+}
+
+.icon:hover {
+    animation-play-state: paused;
+    transform: scale(1.3) rotate(15deg);
+    filter: brightness(1.2);
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .booth-title {
+        top: 8%;
+        font-size: 2rem;
+    }
+
+    .booth-text {
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.85rem;
+        max-width: 180px;
+    }
+
+    .btn-ticket {
+        bottom: 13%;
+        font-size: 1.2rem;
+    }
+
+    .ticket-container {
+        right: 50%;
+        bottom: 12%;
+        transform: translateX(50%);
+        width: 100px;
+    }
+
+    .ticket-img-booth {
+        width: 100px;
+    }
+
+    @keyframes reveal-ticket {
+        0% {
+            height: 0;
+            transform: translateY(0);
+        }
+        100% {
+            height: 130px;
+            transform: translateY(130px);
+        }
+    }
+
+    /* Ícones animados - ajustados para mobile */
+    .icon {
+        width: 50px;
+    }
+
+    .icon-hat-top-left {
+        top: -30px;
+        left: -80px;
+    }
+
+    .icon-hat-bottom-right {
+        bottom: -20px;
+        right: -80px;
+    }
+
+    .icon-star-top-right {
+        top: -20px;
+        right: -100px;
+    }
+
+    .icon-star-bottom-left {
+        bottom: -20px;
+        left: -120px;
+    }
+
+    /* Animações mais suaves no mobile */
+    @keyframes bounce-crazy-1 {
+        0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+        25% { transform: translate(60px, -40px) rotate(180deg) scale(1.1); }
+        50% { transform: translate(-40px, -20px) rotate(360deg) scale(0.95); }
+        75% { transform: translate(50px, 30px) rotate(540deg) scale(1.05); }
+        100% { transform: translate(0, 0) rotate(720deg) scale(1); }
+    }
+
+    @keyframes bounce-crazy-2 {
+        0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+        25% { transform: translate(-50px, 40px) rotate(-180deg) scale(0.9); }
+        50% { transform: translate(80px, -50px) rotate(-360deg) scale(1.2); }
+        75% { transform: translate(-60px, 30px) rotate(-540deg) scale(0.95); }
+        100% { transform: translate(0, 0) rotate(-720deg) scale(1); }
+    }
+
+    @keyframes bounce-crazy-3 {
+        0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+        20% { transform: translate(70px, 50px) rotate(90deg) scale(1.3); }
+        40% { transform: translate(-50px, -30px) rotate(270deg) scale(0.8); }
+        60% { transform: translate(40px, -60px) rotate(450deg) scale(1.1); }
+        80% { transform: translate(-70px, 40px) rotate(630deg) scale(0.9); }
+        100% { transform: translate(0, 0) rotate(720deg) scale(1); }
+    }
+
+    @keyframes bounce-crazy-4 {
+        0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+        30% { transform: translate(-80px, -40px) rotate(-120deg) scale(1.05); }
+        60% { transform: translate(50px, 50px) rotate(-360deg) scale(0.95); }
+        90% { transform: translate(-40px, -60px) rotate(-600deg) scale(1.2); }
+        100% { transform: translate(0, 0) rotate(-720deg) scale(1); }
+    }
+}
+
+@media (max-width: 480px) {
+    .booth-title {
+        font-size: 1.6rem;
+    }
+
+    .booth-text {
+        font-size: 0.75rem;
+        max-width: 160px;
+    }
+
+    .btn-ticket {
+        font-size: 1rem;
+    }
+
+    .ticket-container {
+        width: 80px;
+    }
+
+    .ticket-img-booth {
+        width: 80px;
+    }
+
+    .icon {
+        width: 40px;
+    }
+}

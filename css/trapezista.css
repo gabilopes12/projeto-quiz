@@ -1,0 +1,246 @@
+.resultado-trapezista {
+    background: url("/img/fundoTrapezista.png") center center no-repeat;
+    background-size: cover;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultado-trapezista.active {
+    display: flex;
+}
+
+.resultado-content {
+    position: relative;
+    padding: 19% 45%;
+}
+
+/* título */
+.resultado-titulo {
+    position: absolute;
+    top: 12%;
+    left: 12%;
+    transform: translateY(-50%);
+    font-family: var(--font-garamond);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-title-main);
+    margin: 0;
+}
+
+/* mancha atrás do texto */
+.resultado-mancha {
+    position: absolute;
+    top: 15%;
+    left: 4%;
+    width: 40%;
+    max-width: 420px;
+    height: auto;
+    z-index: 0;
+}
+
+/* texto principal */
+.resultado-texto {
+    position: absolute;
+    top: 30%;
+    left: 12%;
+    width: 38%;
+    font-family: var(--font-lato);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-subtitle);
+    line-height: 1.4;
+}
+
+/* trapezista à direita */
+.resultado-trapezista-img {
+    position: absolute;
+    bottom: -5%;
+    right: -2%;
+    height: 100%;
+    width: auto;
+}
+
+/* estrelas - POSIÇÕES FIXAS */
+.star {
+    position: absolute;
+    width: 70px;
+    height: auto;
+}
+
+.star-top-left    { top: 16%; left: 40%; }
+.star-top-right   { top: 16%; right: 20%; }
+.star-middle      { top: 52%; left: 55%; }
+.star-bottom-left { bottom: 12%; left: 18%; }
+.star-bottom-right{ bottom: 8%;  right: 15%; }
+
+/* Animações de explosão específicas para cada estrela */
+/* Top Left*/
+@keyframes explode-top-left {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3.5) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        top: 16%;
+        left: 40%;
+        transform: translate(0, 0) scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* Top Right */
+@keyframes explode-top-right {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3.5) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        top: 16%;
+        right: 20%;
+        left: auto;
+        transform: translate(0, 0) scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* Middle */
+@keyframes explode-middle {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3.5) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        top: 52%;
+        left: 55%;
+        transform: translate(0, 0) scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* Bottom Left */
+@keyframes explode-bottom-left {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3.5) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        bottom: 12%;
+        left: 18%;
+        top: auto;
+        transform: translate(0, 0) scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* Bottom Right */
+@keyframes explode-bottom-right {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(3.5) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        bottom: 8%;
+        right: 15%;
+        top: auto;
+        left: auto;
+        transform: translate(0, 0) scale(1) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* Animação de DANÇA celebrativa */
+@keyframes star-celebrate {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    10% {
+        transform: translate(5px, -8px) rotate(15deg) scale(1.1);
+    }
+    20% {
+        transform: translate(-5px, -12px) rotate(-12deg) scale(1.05);
+    }
+    30% {
+        transform: translate(8px, -5px) rotate(18deg) scale(1.12);
+    }
+    40% {
+        transform: translate(-6px, -10px) rotate(-15deg) scale(1.08);
+    }
+    50% {
+        transform: translate(7px, -15px) rotate(20deg) scale(1.15);
+    }
+    60% {
+        transform: translate(-8px, -8px) rotate(-18deg) scale(1.1);
+    }
+    70% {
+        transform: translate(6px, -12px) rotate(16deg) scale(1.07);
+    }
+    80% {
+        transform: translate(-7px, -6px) rotate(-14deg) scale(1.09);
+    }
+    90% {
+        transform: translate(5px, -10px) rotate(12deg) scale(1.06);
+    }
+}
+
+/* Animação de brilho cintilante */
+@keyframes twinkle-circus {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+    }
+    50% {
+        filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.9));
+    }
+}
+
+/* Inicialmente todas as estrelas estão VISÍVEIS no centro */
+#pag14 .star {
+    opacity: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Quando página fica ativa, explodem para suas posições e celebram */
+#pag14.active .star-top-left {
+    animation:
+            explode-top-left 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s forwards,
+            star-celebrate 2.5s ease-in-out 1.2s infinite,
+            twinkle-circus 1.5s ease-in-out 1.2s infinite;
+}
+
+#pag14.active .star-top-right {
+    animation:
+            explode-top-right 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.03s forwards,
+            star-celebrate 2.8s ease-in-out 1.23s infinite,
+            twinkle-circus 1.8s ease-in-out 1.23s infinite;
+}
+
+#pag14.active .star-middle {
+    animation:
+            explode-middle 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.06s forwards,
+            star-celebrate 2.6s ease-in-out 1.26s infinite,
+            twinkle-circus 1.6s ease-in-out 1.26s infinite;
+}
+
+#pag14.active .star-bottom-left {
+    animation:
+            explode-bottom-left 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.09s forwards,
+            star-celebrate 3s ease-in-out 1.29s infinite,
+            twinkle-circus 2s ease-in-out 1.29s infinite;
+}
+
+#pag14.active .star-bottom-right {
+    animation:
+            explode-bottom-right 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.12s forwards,
+            star-celebrate 2.7s ease-in-out 1.32s infinite,
+            twinkle-circus 1.7s ease-in-out 1.32s infinite;
+}

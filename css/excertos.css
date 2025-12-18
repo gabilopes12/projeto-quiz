@@ -1,0 +1,346 @@
+/* fundo amarelo geral */
+.frase {
+    background: transparent; /* Remove background daqui */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+}
+
+/* Fundo amarelo fixo que cobre tudo */
+.frase::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("/img/fundoAmarelo.png") center center no-repeat;
+    background-size: cover;
+    z-index: -1; /* Atrás de tudo na página frase */
+    pointer-events: none;
+}
+
+.frase.active {
+    display: flex;
+}
+
+/* Linha SVG nas páginas de frase */
+.frase .line2 {
+    position: absolute;
+    top: -10%;
+    left: 33%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 120%;
+    max-height: none;
+    opacity: 1;
+    z-index: 2;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+}
+
+.frase.active .line2 {
+    animation: revealLineFrase 2.5s ease-in-out 0.3s forwards;
+}
+
+.frase .line4 {
+    position: absolute;
+    top: -10%;
+    left: 53%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 120%;
+    max-height: none;
+    opacity: 1;
+    z-index: 2;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+}
+
+.frase.active .line4 {
+    animation: revealLineFrase 2.5s ease-in-out 0.3s forwards;
+}
+
+.frase .line6 {
+    position: absolute;
+    top: -10%;
+    left: 67%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 120%;
+    max-height: none;
+    opacity: 1;
+    z-index: 2;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+}
+
+.frase.active .line6 {
+    animation: revealLineFrase 2.5s ease-in-out 0.3s forwards;
+}
+
+@keyframes revealLineFrase {
+    from {
+        clip-path: inset(0 0 100% 0);
+    }
+    to {
+        clip-path: inset(0 0 0% 0);
+    }
+}
+
+.frase-content {
+    padding: 9% 10%;
+    position: relative;
+    z-index: 1;
+}
+
+.frase-spot {
+    position: relative;
+    display: block;
+    max-width: 70vw;
+    height: auto;
+    z-index: 3;
+}
+
+.frase-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-garamond);
+    font-style: italic;
+    font-size: var(--font-size-title);
+    text-align: center;
+    max-width: 60vw;
+    z-index: 4;
+}
+
+/* Objetos decorativos - GERAL (sem animação por padrão) */
+.frase-icon {
+    position: absolute;
+    width: 70px;
+    height: auto;
+    opacity: 0.9;
+    z-index: 4;
+}
+
+/* Objetos da PAG4 - com animação de trapézio */
+#pag4 .frase-icon {
+    cursor: pointer;
+    transform-origin: top center;
+}
+
+/* Posições dos objetos na PAG4 */
+#pag4 .star1 {
+    top: 8%;
+    left: 30%;
+}
+
+#pag4 .star2 {
+    bottom: 12%;
+    left: 22%;
+}
+
+#pag4 .star3 {
+    top: 20%;
+    right: 20%;
+}
+
+#pag4 .hat1 {
+    top: 40%;
+    left: 8%;
+}
+
+#pag4 .hat2 {
+    bottom: 12%;
+    right: 22%;
+}
+
+/* Posições dos objetos na PAG6 - Estrelas tremem, chapéus afastados */
+#pag6 .star4 {
+    top: 12%;
+    left: 28%;
+    cursor: pointer;
+}
+
+#pag6 .star5 {
+    bottom: 5%;
+    left: 16%;
+    cursor: pointer;
+}
+
+#pag6 .star10 {
+    top: 47%;
+    right: 10%;
+    cursor: pointer;
+}
+
+#pag6 .hat3 {
+    position: absolute;
+    top: 10%;
+    left: auto;
+    right: 25%;
+    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#pag6 .hat4 {
+    position: absolute;
+    bottom: 12%;
+    left: auto;
+    right: 30%;
+    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#pag6 .hat10 {
+    position: absolute;
+    top: 38%;
+    left: 5%;
+    transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Posições dos chapéus quando próximos (quando estrela é clicada) */
+#pag6 .hat3.proximo {
+    top: 10% !important;
+    left: 35% !important;
+    right: auto !important;
+}
+
+#pag6 .hat4.proximo {
+    bottom: 12% !important;
+    left: 20% !important;
+    right: auto !important;
+}
+
+#pag6 .hat10.proximo {
+    top: 38% !important;
+    right: 17% !important;
+    left: auto !important;
+}
+
+/* Posições dos objetos na PAG8 - com física */
+#pag8 .frase-content {
+    position: relative;
+}
+
+/* Posições dos objetos na PAG8 - TODOS começam no topo */
+#pag8 .star6,
+#pag8 .star7,
+#pag8 .star8,
+#pag8 .star9,
+#pag8 .hat5,
+#pag8 .hat6,
+#pag8 .hat7,
+#pag8 .hat8,
+#pag8 .hat9 {
+    position: absolute;
+    cursor: grab;
+    z-index: 10;
+    top: 5%; /* Todos começam no topo */
+}
+
+/* Distribui horizontalmente */
+#pag8 .star6 { left: 10%; }
+#pag8 .star7 { left: 25%; }
+#pag8 .star8 { left: 40%; }
+#pag8 .star9 { left: 55%; }
+#pag8 .hat5 { left: 15%; }
+#pag8 .hat6 { left: 30%; }
+#pag8 .hat7 { left: 45%; }
+#pag8 .hat8 { left: 60%; }
+#pag8 .hat9 { left: 75%; }
+
+/* Animação de balanço do trapézio (pêndulo) */
+@keyframes trapeze-swing {
+    0% {
+        transform: rotate(-35deg);
+    }
+    50% {
+        transform: rotate(35deg);
+    }
+    100% {
+        transform: rotate(-35deg);
+    }
+}
+
+/* Classes de velocidade para o balanço - APENAS PAG4 */
+#pag4 .frase-icon.speed-1 {
+    animation: trapeze-swing 4s ease-in-out infinite;
+}
+
+#pag4 .frase-icon.speed-2 {
+    animation: trapeze-swing 2s ease-in-out infinite;
+}
+
+#pag4 .frase-icon.speed-3 {
+    animation: trapeze-swing 1s ease-in-out infinite;
+}
+
+/* Delays diferentes para cada objeto criar efeito mais natural - APENAS PAG4 */
+#pag4 .star1 {
+    animation-delay: 0s;
+}
+
+#pag4 .star2 {
+    animation-delay: 0.5s;
+}
+
+#pag4 .star3 {
+    animation-delay: 1s;
+}
+
+#pag4 .hat1 {
+    animation-delay: 1.5s;
+}
+
+#pag4 .hat2 {
+    animation-delay: 2s;
+}
+
+/* Classe inicial quando a PAG4 fica ativa */
+#pag4.active .frase-icon {
+    animation: trapeze-swing 4s ease-in-out infinite;
+}
+
+/* Animação de tremor para as estrelas da PAG6 */
+@keyframes tremer {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-2px, -1px); }
+    20% { transform: translate(2px, 1px); }
+    30% { transform: translate(-1px, 2px); }
+    40% { transform: translate(1px, -2px); }
+    50% { transform: translate(-2px, 1px); }
+    60% { transform: translate(2px, -1px); }
+    70% { transform: translate(-1px, -2px); }
+    80% { transform: translate(1px, 2px); }
+    90% { transform: translate(-2px, -1px); }
+}
+
+/* Animação de tremor reduzido */
+@keyframes tremer-leve {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-0.5px, -0.3px); }
+    20% { transform: translate(0.5px, 0.3px); }
+    30% { transform: translate(-0.3px, 0.5px); }
+    40% { transform: translate(0.3px, -0.5px); }
+    50% { transform: translate(-0.5px, 0.3px); }
+    60% { transform: translate(0.5px, -0.3px); }
+    70% { transform: translate(-0.3px, -0.5px); }
+    80% { transform: translate(0.3px, 0.5px); }
+    90% { transform: translate(-0.5px, -0.3px); }
+}
+
+/* Estrelas da PAG6 tremem por padrão */
+#pag6 .star4,
+#pag6 .star5,
+#pag6 .star10 {
+    animation: tremer 0.3s ease-in-out infinite;
+}
+
+/* Quando estrela é clicada, treme menos (mais calma) */
+#pag6 .star4.calma,
+#pag6 .star5.calma,
+#pag6 .star10.calma {
+    animation: tremer-leve 0.5s ease-in-out infinite;
+}

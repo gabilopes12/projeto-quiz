@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>O Primeiro Sofrimento - Quiz</title>
+    <link rel="stylesheet" href="css/linha.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pag1.css">
+    <link rel="stylesheet" href="css/pag2.css">
+    <link rel="stylesheet" href="css/pag3.css">
+    <link rel="stylesheet" href="css/excertos.css">
+    <link rel="stylesheet" href="css/escolhas.css">
+    <link rel="stylesheet" href="css/revelacao.css">
+    <link rel="stylesheet" href="css/trapezista.css">
+    <link rel="stylesheet" href="css/empresario.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preload" href="fonts/OPTIMA.TTF" as="font" type="font/ttf" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+</head>
+<body>
+
+<!-- PAG1 -->
+<section class="screen ticket-booth" id="pag1">
+    <div class="booth-content">
+        <img src="img/bilheteira.png" alt="Bilheteira" class="booth-img">
+
+        <h1 class="booth-title">BILHETEIRA</h1>
+
+        <img src="./img/SVG/chapeu.svg"  alt="Chapéu"  class="icon icon-hat-top-left">
+        <img src="./img/SVG/chapeu.svg"  alt="Chapéu"  class="icon icon-hat-bottom-right">
+        <img src="./img/SVG/estrela.svg" alt="Estrela" class="icon icon-star-top-right">
+        <img src="./img/SVG/estrela.svg" alt="Estrela" class="icon icon-star-bottom-left">
+
+        <p class="booth-text">
+            Este website foi feito para funcionar em computador.<br>
+            Para evitar problemas, acesse pelo desktop.
+        </p>
+
+        <button class="btn-primary btn-ticket" id="btn-bilhete">
+            retire o seu bilhete
+        </button>
+
+        <div class="ticket-container" id="ticket-container">
+            <img src="img/SVG/bilheteBilheteira.svg" alt="Bilhete" class="ticket-img-booth" id="bilhete">
+        </div>
+    </div>
+</section>
+
+<!-- PAG2 -->
+<section class="screen ticket" id="pag2">
+    <div class="ticket-content">
+        <img src="img/bilhete.png" alt="Bilhete" class="ticket-img">
+
+        <h1 class="ticket-title-main">
+            O PRIMEIRO<br>SOFRIMENTO
+        </h1>
+
+        <h2 class="ticket-subtitle">
+            FRANZ KAFKA
+        </h2>
+
+        <h2 class="ticket-quiz-label">
+            QUIZ
+        </h2>
+
+        <!-- Container do Laço e Fio -->
+        <div class="bow-rope-container">
+            <!-- Linha horizontal (aparece sempre) -->
+            <div class="rope-line" id="ropeLine"></div>
+
+            <!-- Fio horizontal como SVG (versão animada) -->
+            <svg class="rope-svg" id="rope" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <line class="rope-path" x1="0" y1="50" x2="100" y2="50"/>
+            </svg>
+
+            <!-- Laço -->
+            <div class="bow-container" id="bow">
+                <svg class="bow-svg" viewBox="0 0 80 65" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Loop esquerdo -->
+                    <g class="bow-loop-left">
+                        <path class="bow-path" d="M 30,32 Q 12,20 16,36 Q 20,48 30,42"/>
+                    </g>
+
+                    <!-- Loop direito -->
+                    <g class="bow-loop-right">
+                        <path class="bow-path" d="M 50,32 Q 68,20 64,36 Q 60,48 50,42"/>
+                    </g>
+
+                    <!-- Centro do laço -->
+                    <g class="bow-center">
+                        <ellipse cx="40" cy="36" rx="7" ry="9" fill="var(--color-salmon)"/>
+                    </g>
+
+                    <!-- Cauda esquerda -->
+                    <g class="bow-tail-left">
+                        <path class="bow-path" d="M 36,42 L 30,56"/>
+                    </g>
+
+                    <!-- Cauda direita -->
+                    <g class="bow-tail-right">
+                        <path class="bow-path" d="M 44,42 L 50,56"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <button class="btn-laço" id="btn-bilhete" >
+            clique no laço para desenlaçar
+        </button>
+    </div>
+</section>
+
+<!-- PAG3 -->
+<section class="screen start" id="pag3">
+    <img src="img/SVG/linha1.svg" alt="" class="start-line" id="linha-svg">
+
+    <div class="start-content box-bege">
+        <img src="img/start.png" alt="Start" class="start-img">
+        <span class="start-label" id="start-btn">START</span>
+    </div>
+</section>
+
+<!-- PAG4 -->
+<section class="screen frase" id="pag4">
+
+    <div class="frase-content box-bege">
+        <img src="img/SVG/linha2.svg" alt="" class="line2" id="linha-svg2">
+        <img src="img/manchaAmarela.png" alt="" class="frase-spot">
+
+        <img src="img/SVG/estrela.svg" alt="" class="frase-icon star1">
+        <img src="img/SVG/estrela.svg" alt="" class="frase-icon star2">
+        <img src="img/SVG/estrela.svg" alt="" class="frase-icon star3">
+        <img src="img/SVG/chapeu.svg"  alt="" class="frase-icon hat1">
+        <img src="img/SVG/chapeu.svg"  alt="" class="frase-icon hat2">
+
+        <p class="frase-text">
+            Passava o dia e a noite no trapézio [...]<br>
+            apenas para alcançar o perfeccionismo
+        </p>
+
+        <ul class="frase-steps">
+            <li><span>1</span></li>
+            <li><span>2</span></li>
+            <li><span>3</span></li>
+            <li><span>4</span></li>
+            <li><span>5</span></li>
+            <li><span>6</span></li>
+        </ul>
+
+        <button class="btn-primary btn-ticket" id="btn-pag4">
+            next page
+        </button>
+    </div>
+</section>
+
+<!-- PAG5 -->
+<section class="screen escolhas" id="pag5">
+    <div class="escolhas-inner box-bege">
+        <img src="img/SVG/linha3.svg" alt="" class="line3" id="linha-svg3">
+        <h1 class="escolhas-titulo">O que te define melhor?</h1>
+
+        <img src="img/caixa.png" alt="" class="caixa caixa-esq">
+        <img src="img/caixa.png" alt="" class="caixa caixa-dir">
+
+        <img src="img/manchaEscolha.png" alt="" class="mancha mancha-esq mancha-a">
+        <img src="img/manchaEscolha.png" alt="" class="mancha mancha-dir mancha-b">
+
+        <!--
+        <video class="video-escolha video-pag5-esq" autoplay loop muted playsinline>
+            <source src="animacoes/trapezista1.mp4" type="video/mp4">
+        </video>
+
+        <video class="video-escolha video-pag5-dir" autoplay loop muted playsinline>
+            <source src="animacoes/empresario1.mp4" type="video/mp4">
+        </video> -->
+
+        <div class="bloco bloco-esq opcao-a">
+            <h2 class="letra-opcao">A.</h2>
+            <p class="texto-opcao">
+                Sou alguém que precisa<br>
+                do seu próprio espaço<br>
+                para se sentir bem
+            </p>
+        </div>
+
+        <div class="bloco bloco-dir opcao-b">
+            <h2 class="letra-opcao">B.</h2>
+            <p class="texto-opcao">
+                Sou alguém que se sente<br>
+                responsável por manter<br>
+                tudo organizado
+            </p>
+        </div>
+
+        <ul class="frase-steps">
+            <li><span>1</span></li>
+            <li><span>2</span></li>
+            <li><span>3</span></li>
+            <li><span>4</span></li>
+            <li><span>5</span></li>
+            <li><span>6</span></li>
+        </ul>
+
+        <button class="btn-primary btn-ticket btn-escolha-next" id="btn-pag5">
+            next page
+        </button>
+    </div>
+</section>
+
+<!-- PAG6 -->
+<section class="screen frase" id="pag6">
+    <div class="frase-content box-bege">
+        <img src="img/SVG/linha4.svg" alt="" class="line4" id="linha-svg4">
+        <img src="img/manchaAmarela.png" alt="" class="frase-spot">
+
+        <img src="img/SVG/estrela.svg" alt="" class="frase-icon star4">
+        <img src="img/SVG/estrela.svg" alt="" class="frase-icon star5">
+        <img src="img/SVG/estrela.svg" alt="" class="frase-icon star10">
+
+        <img src="img/SVG/chapeu.svg"  alt="" class="frase-icon hat3">
+        <img src="img/SVG/chapeu.svg"  alt="" class="frase-icon hat4">
+        <img src="img/SVG/chapeu.svg"  alt="" class="frase-icon hat10">
+
+        <p class="frase-text">
+            As viagens destruíam os nervos do trapezista [...]<br>
+            o empresário fazia tudo para o proteger
+        </p>
+
+        <ul class="frase-steps">
+            <li><span>1</span></li>
+            <li><span>2</span></li>
+            <li><span>3</span></li>
+            <li><span>4</span></li>
+            <li><span>5</span></li>
+            <li><span>6</span></li>
+        </ul>
+
+        <button class="btn-primary btn-ticket" id="btn-pag6">
+            next page
+        </button>
+    </div>
+</section>
+
+<!-- PAG7 -->
+<section class="screen escolhas" id="pag7">
+    <div class="escolhas-inner box-bege">
+        <img src="img/SVG/linha5.svg" alt="" class="line5" id="linha-svg5">
+        <h1 class="escolhas-titulo">O que te acontece em momentos instáveis?</h1>
+
+        <img src="img/caixa.png" alt="" class="caixa caixa-esq">
+        <img src="img/caixa.png" alt="" class="caixa caixa-dir">
+
+        <img src="img/manchaEscolha.png" alt="" class="mancha mancha-esq mancha-a">
+        <img src="img/manchaEscolha.png" alt="" class="mancha mancha-dir mancha-b">
+
+        <!--
+        <video class="video-escolha video-pag7-esq" autoplay loop muted playsinline>
+            <source src="animacoes/trapezista2.mp4" type="video/mp4">
+        </video>
+
+        <video class="video-escolha video-pag7-dir" autoplay loop muted playsinline>
+            <source src="animacoes/empresario2.mp4" type="video/mp4">
+        </video> -->
+
+        <div class="bloco bloco-esq opcao-a">
+            <h2 class="letra-opcao">A.</h2>
+            <p class="texto-opcao">
+                Fecho-me no que conheço.<br>
+                Preciso de estabilidade<br>
+                para não me perder
+            </p>
+        </div>
+
+        <div class="bloco bloco-dir opcao-b">
+            <h2 class="letra-opcao">B.</h2>
+            <p class="texto-opcao">
+                Tomo iniciativa. Reorganizo<br>
+                o que for preciso para<br>
+                manter o controlo
+            </p>
+        </div>
+
+        <ul class="frase-steps">
+            <li><span>1</span></li>
+            <li><span>2</span></li>
+            <li><span>3</span></li>
+            <li><span>4</span></li>
+            <li><span>5</span></li>
+            <li><span>6</span></li>
+        </ul>
+
+        <button class="btn-primary btn-ticket btn-escolha-next" id="btn-pag7">
+            next page
+        </button>
+    </div>
+</section>
+
+<!-- PAG8 -->
+<section class="screen frase" id="pag8">
+    <div class="frase-content box-bege">
+        <img src="img/SVG/linha6.svg" alt="" class="line6" id="linha-svg6">
+        <img src="img/manchaAmarela.png" alt="" class="frase-spot">
+
+        <!-- Estrelas -->
+        <img src="img/SVG/estrela.svg" alt="" class="frase-icon star6">
+        <img src="img/SVG/estrela.svg" alt="" class="frase-icon star7">
+        <img src="img/SVG/estrela.svg" alt="" class="frase-icon star8">
+        <img src="img/SVG/estrela.svg" alt="" class="frase-icon star9">
+
+        <!-- Chapéus -->
+        <img src="img/SVG/chapeu.svg" alt="" class="frase-icon hat5">
+        <img src="img/SVG/chapeu.svg" alt="" class="frase-icon hat6">
+        <img src="img/SVG/chapeu.svg" alt="" class="frase-icon hat7">
+        <img src="img/SVG/chapeu.svg" alt="" class="frase-icon hat8">
+        <img src="img/SVG/chapeu.svg" alt="" class="frase-icon hat9">
+
+        <p class="frase-text">
+            Com apenas esta barra nas mãos...<br>
+            como posso eu viver!
+        </p>
+
+        <ul class="frase-steps">
+            <li><span>1</span></li>
+            <li><span>2</span></li>
+            <li><span>3</span></li>
+            <li><span>4</span></li>
+            <li><span>5</span></li>
+            <li><span>6</span></li>
+        </ul>
+
+        <button class="btn-primary btn-ticket" id="btn-pag8">
+            next page
+        </button>
+    </div>
+</section>
+
+<!-- PAG9 -->
+<section class="screen escolhas" id="pag9">
+    <div class="escolhas-inner box-bege">
+        <img src="img/SVG/linha7.svg" alt="" class="line7" id="linha-svg7">
+        <h1 class="escolhas-titulo"> Quando alguém revela fragilidade, tu?</h1>
+
+        <img src="img/caixa.png" alt="" class="caixa caixa-esq">
+        <img src="img/caixa.png" alt="" class="caixa caixa-dir">
+
+        <img src="img/manchaEscolha.png" alt="" class="mancha mancha-esq mancha-a">
+        <img src="img/manchaEscolha.png" alt="" class="mancha mancha-dir mancha-b">
+
+        <!--
+        <video class="video-escolha video-pag9-esq" autoplay loop muted playsinline>
+            <source src="animacoes/trapezista3.mp4" type="video/mp4">
+        </video>
+
+        <video class="video-escolha video-pag9-dir" autoplay loop muted playsinline>
+            <source src="animacoes/empresario3.mp4" type="video/mp4">
+        </video> -->
+
+        <div class="bloco bloco-esq opcao-a">
+            <h2 class="letra-opcao">A.</h2>
+            <p class="texto-opcao">
+                Refletes. Empatizas.<br>
+                Aproximas-te pelo silêncio<br>
+                e compreensão.
+            </p>
+        </div>
+
+        <div class="bloco bloco-dir opcao-b">
+            <h2 class="letra-opcao">B.</h2>
+            <p class="texto-opcao">
+                Reorganizo tudo de imediato<br>
+                Procuro soluções práticas<br>
+                e faço acontecer
+            </p>
+        </div>
+
+        <ul class="frase-steps">
+            <li><span>1</span></li>
+            <li><span>2</span></li>
+            <li><span>3</span></li>
+            <li><span>4</span></li>
+            <li><span>5</span></li>
+            <li><span>6</span></li>
+        </ul>
+
+        <button class="btn-primary btn-ticket btn-escolha-next" id="btn-pag9">
+            next page
+        </button>
+    </div>
+</section>
+
+<!-- PAG10 - Encontro -->
+<section class="screen encontro" id="pag10">
+    <div class="encontro-content box-bege">
+        <img src="img/SVG/linha8.svg" alt="" class="line8" id="linha-svg8">
+
+        <img src="img/trapezista1.png" alt="Trapezista" class="char char-trapezista">
+        <img src="img/SVG/linha9.svg" alt="" class="line9" id="linha-svg9">
+
+        <img src="img/empresario1.png" alt="Empresário" class="char char-empresario">
+        <img src="img/SVG/linha10.svg" alt="" class="line10" id="linha-svg10">
+    </div>
+    <button class="btn-primary btn-ticket" id="btn-pag10">
+        next page
+    </button>
+</section>
+
+<!-- PAG11 Resultado T -->
+<section class="screen encontro oculta" id="pag11">
+    <div class="encontro-content box-bege">
+        <img src="img/SVG/linha11.svg" alt="" class="line11" id="linha-svg11">
+        <img src="img/empresario1.png" alt="Empresário" class="char char-empresario">
+        <img src="img/trapezista1.png" alt="Trapezista" class="char char-trapezista">
+        <img src="img/SVG/linha12.svg" alt="" class="line12" id="linha-svg12">
+    </div>
+    <p class="encontro-hint">agite o mouse, para revelar o resultado</p>
+    <button class="btn-primary btn-ticket" id="btn-pag11">
+        next page
+    </button>
+</section>
+
+<!-- PAG12 Resultado E -->
+<section class="screen encontro oculta" id="pag12">
+    <div class="encontro-content box-bege">
+        <img src="img/SVG/linha13.svg" alt="" class="line13" id="linha-svg13">
+        <img src="img/empresario1.png" alt="Empresário" class="char char-empresario">
+        <img src="img/SVG/linha14.svg" alt="" class="line14" id="linha-svg14">
+        <img src="img/trapezista1.png" alt="Trapezista" class="char char-trapezista">
+    </div>
+    <p class="encontro-hint">agite o mouse, para revelar o resultado</p>
+    <button class="btn-primary btn-ticket" id="btn-pag12">
+        next page
+    </button>
+</section>
+
+<!-- PAG14 Trapezista -->
+<section class="screen resultado-trapezista oculta" id="pag14">
+    <div class="resultado-content box-bege">
+        <h1 class="resultado-titulo">Trapezista</h1>
+
+        <img src="img/manchaEscolhaT.png" alt="" class="resultado-mancha">
+
+        <p class="resultado-texto">
+            Tu identificas-te com a introspeção,<br>
+            a necessidade de espaço, a busca<br>
+            de perfeição.<br>
+            A tua força vem do silêncio e<br>
+            da profundidade.
+        </p>
+
+        <img src="img/trapezista1.png" alt="Trapezista" class="resultado-trapezista-img">
+
+        <!-- estrelas decorativas -->
+        <img src="img/SVG/estrela.svg" alt="" class="star star-top-left">
+        <img src="img/SVG/estrela.svg" alt="" class="star star-top-right">
+        <img src="img/SVG/estrela.svg" alt="" class="star star-middle">
+        <img src="img/SVG/estrela.svg" alt="" class="star star-bottom-left">
+        <img src="img/SVG/estrela.svg" alt="" class="star star-bottom-right">
+
+    </div>
+</section>
+
+<!-- PAG15 Empresario -->
+<section class="screen resultado-empresario oculta" id="pag15">
+    <div class="resultado-content box-bege">
+        <h1 class="resultado-titulo">Empresário</h1>
+
+        <img src="img/manchaEscolhaE.png" alt="" class="resultado-mancha">
+
+        <p class="resultado-texto">
+            Tu identificas-te com a gestão,<br>
+            o cuidado prático, o sentido<br>
+            de responsabilidade.<br>
+            A tua força vem da estrutura<br>
+            e da proteção.
+        </p>
+
+        <img src="img/empresario.png" alt="Empresário" class="resultado-empresario-img">
+
+        <!-- chapéus decorativos -->
+        <img src="img/SVG/chapeu.svg" alt="" class="hat hat-top-left">
+        <img src="img/SVG/chapeu.svg" alt="" class="hat hat-top-right">
+        <img src="img/SVG/chapeu.svg" alt="" class="hat hat-middle">
+        <img src="img/SVG/chapeu.svg" alt="" class="hat hat-bottom-left">
+        <img src="img/SVG/chapeu.svg" alt="" class="hat hat-bottom-right">
+
+    </div>
+</section>
+
+<script src="js/bilhete.js"></script>
+<script src="js/clickEscolha.js"></script>
+<script src="js/linha.js"></script>
+<script src="js/laço.js"></script>
+<script src ="js/navegacao.js"></script>
+<script src="js/objetosBalanco.js"></script>
+<script src="js/objetosNervos.js"></script>
+<script src="js/objetosFisica.js"></script>
+<script src="js/suspenseTremor11.js"></script>
+<script src="js/suspenseTremor12.js"></script>
+
+</body>
+</html>

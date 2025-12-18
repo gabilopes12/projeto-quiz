@@ -1,0 +1,335 @@
+/* 2) Bilhete com Laço */
+.ticket {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.ticket.active {
+    display: flex;
+    opacity: 1;
+}
+
+.ticket-content {
+    position: relative;
+    display: inline-block;
+}
+
+/* imagem do bilhete */
+.ticket-img {
+    display: block;
+    max-height: 95vh;
+    height: auto;
+    width: auto;
+}
+
+/* O PRIMEIRO SOFRIMENTO */
+.ticket-title-main {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-garamond);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-main-main);
+    text-align: center;
+    line-height: 1.2;
+    opacity: 0;
+}
+
+/* FRANZ KAFKA */
+.ticket-subtitle {
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-family: var(--font-optima);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-title-main);
+    opacity: 0;
+}
+
+/* QUIZ */
+.ticket-quiz-label {
+    position: absolute;
+    top: 61%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-family: var(--font-optima);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-title-main);
+    color: var(--color-white);
+    text-align: center;
+    opacity: 0;
+}
+
+/* Classe para estado visível */
+.ticket-subtitle.visible,
+.ticket-quiz-label.visible,
+.ticket-title-main.visible {
+    opacity: 1;
+}
+
+/* Animação de entrada dos textos */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+.ticket.active .ticket-title-main {
+    animation: fadeInUp 0.6s ease 0.3s forwards;
+}
+
+.ticket.active .ticket-subtitle {
+    animation: fadeInUp 0.6s ease 0.5s forwards;
+}
+
+.ticket.active .ticket-quiz-label {
+    animation: fadeInUp 0.6s ease 0.7s forwards;
+}
+
+/* botao */
+.btn-laço {
+    position: absolute;
+    bottom: 13%;       /* ajusta para subir/descer */
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-garamond);
+    font-style: italic;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-button);
+    border: none;
+    background: none;
+}
+
+/* ===== LAÇO E FIO ===== */
+
+/* Container do laço e fio */
+.bow-rope-container {
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 120px;
+    opacity: 0;
+    z-index: 100;
+}
+
+.ticket.active .bow-rope-container {
+    animation: fadeInUp 0.6s ease 0.9s both;
+}
+
+/* Linha horizontal simples (fallback) */
+.rope-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    transform: translateY(-50%);
+    z-index: 1;
+    border-radius: 3px;
+}
+
+/* Fio como SVG para animação fluida */
+.rope-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.rope-path {
+    fill: none;
+    stroke: var(--color-salmon);
+    stroke-width: 5;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+}
+
+/* Versão simplificada da animação sem path morphing */
+.rope-svg.falling {
+    animation: ropeFallSimple 1.2s ease-in forwards;
+}
+
+.rope-line.falling {
+    animation: ropeFallSimple 1.2s ease-in forwards;
+}
+
+@keyframes ropeFallSimple {
+    0% {
+        transform: translateY(0) scaleY(1);
+        opacity: 1;
+    }
+    30% {
+        transform: translateY(10px) scaleY(1.2);
+        opacity: 1;
+    }
+    60% {
+        transform: translateY(50px) scaleY(1.5);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(150px) scaleY(2);
+        opacity: 0;
+    }
+}
+
+/* Container do laço */
+.bow-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+.bow-container:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* SVG do laço */
+.bow-svg {
+    width: 80px;
+    height: 65px;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+}
+
+
+.bow-path {
+    fill: none;
+    stroke: var(--color-salmon);
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Animações de desenlaçar */
+.bow-container.untying .bow-loop-left {
+    animation: untieLoopLeft 1s ease-out forwards;
+}
+
+.bow-container.untying .bow-loop-right {
+    animation: untieLoopRight 1s ease-out forwards;
+}
+
+.bow-container.untying .bow-center {
+    animation: fadeOutCenter 0.5s ease-out forwards;
+}
+
+.bow-container.untying .bow-tail-left {
+    animation: dropTailLeft 1.2s ease-in forwards;
+}
+
+.bow-container.untying .bow-tail-right {
+    animation: dropTailRight 1.2s ease-in forwards;
+}
+
+@keyframes untieLoopLeft {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    60% {
+        transform: translate(-30px, -8px) rotate(-30deg);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(-45px, 35px) rotate(-50deg);
+        opacity: 0;
+    }
+}
+
+@keyframes untieLoopRight {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    60% {
+        transform: translate(30px, -8px) rotate(30deg);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(45px, 35px) rotate(50deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutCenter {
+    to {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+}
+
+@keyframes dropTailLeft {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-15px, 80px) rotate(-25deg);
+        opacity: 0;
+    }
+}
+
+@keyframes dropTailRight {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(15px, 80px) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+.bow-container.untying + .bow-instruction {
+    opacity: 0;
+}
+
+.transition-overlay {
+    position: fixed;
+    inset: 0;
+    background: url("/img/fundo.png") center center no-repeat;
+    background-size: cover;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.transition-overlay.active {
+    opacity: 1;
+}
+
+.transition-overlay img {
+    position: absolute;
+    height: auto;
+}
+
+body {
+    background: url("/img/fundo.png") center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.ticket-booth,
+.ticket {
+    background: transparent !important;
+}

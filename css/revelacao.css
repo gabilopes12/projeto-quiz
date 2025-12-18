@@ -1,0 +1,238 @@
+.encontro {
+    background: url("/img/fundo.png") center center no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+}
+
+.encontro.active {
+    display: flex;
+}
+
+/* retângulo bege reaproveita a .box-bege */
+.encontro-content {
+    padding: 20% 45%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Botão next page - FORA do content, direto no .encontro */
+.encontro > .btn-ticket {
+    position: absolute;
+    bottom: 13%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-family: var(--font-garamond);
+    font-style: italic;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-button);
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+/* personagens */
+.char {
+    position: absolute;
+    width: auto;
+    z-index: 4;
+}
+
+/* empresário */
+.char-empresario {
+    height: 100%;
+    left: 4.1%;
+    bottom: 8%;
+}
+
+/* trapezista  */
+.char-trapezista {
+    height: 88%;
+    right: 7%;
+    bottom: -1%;
+}
+
+/* Linha8 - para PAG10 (primeira linha) */
+.line8 {
+    position: absolute;
+    top: -17%;
+    left: 64.8%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 77%;
+    max-height: none;
+    opacity: 1;
+    z-index: 3;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+}
+
+.encontro.active .line8 {
+    animation: revealLineFrase 2.5s ease-in-out 0.3s forwards;
+}
+
+/* Linha9 - para PAG10 (segunda linha - INVERSA) */
+.line9 {
+    position: absolute;
+    top: 39.7%;
+    left: 53.7%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 37%;
+    max-height: none;
+    opacity: 1;
+    z-index: 5;
+    pointer-events: none;
+    clip-path: inset(100% 0 0 0); /* Esconde completamente inicialmente */
+}
+
+.encontro.active .line9 {
+    animation: revealLinhaInversa 2.5s ease-in-out 2.3s forwards;
+}
+
+/* ANIMAÇÃO INVERSA (de baixo para cima) - CORRIGIDA */
+@keyframes revealLinhaInversa {
+    from {
+        clip-path: inset(100% 0 0 0); /* Escondido (topo cortado) */
+    }
+    to {
+        clip-path: inset(0 0 0 0); /* Totalmente visível */
+    }
+}
+
+/* Linha10 - para PAG10 (terceira linha) */
+.line10 {
+    position: absolute;
+    top: 41%;
+    left: 30%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 75%;
+    max-height: none;
+    opacity: 1;
+    z-index: 6;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+}
+
+.encontro.active .line10 {
+    animation: revealLineFrase 2.5s ease-in-out 4.3s forwards;
+}
+
+/* Linha11 - para PAG11 (primeira linha) */
+.line11 {
+    position: absolute;
+    top: -28%;
+    left: 63.8%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 80%;
+    max-height: none;
+    opacity: 1;
+    z-index: 2;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+}
+
+/* Animação da linha11 - começa primeiro (0.3s) */
+.encontro.active .line11 {
+    animation: revealLineFrase 1.5s ease-in-out 0.3s forwards;
+}
+
+/* Linha12 - para PAG11 (segunda linha) */
+.line12 {
+    position: absolute;
+    top: 53%;
+    left: 80.8%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 30%;
+    max-height: none;
+    opacity: 1;
+    z-index: 4;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+}
+
+/* Animação da linha12 - começa depois (1.3s) */
+.encontro.active .line12 {
+    animation: revealLineFrase 1.5s ease-in-out 1.5s forwards;
+}
+
+/* Linha13 - para PAG12 (primeira linha) */
+.line13 {
+    position: absolute;
+    top: -45%;
+    left: 35%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 80%;
+    max-height: none;
+    opacity: 1;
+    z-index: 2;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+}
+
+/* Animação da linha13 - começa primeiro (0.3s) */
+.encontro.active .line13 {
+    animation: revealLineFrase 1.5s ease-in-out 0.3s forwards;
+}
+
+/* Linha14 - para PAG12 (segunda linha - continua a primeira) */
+.line14 {
+    position: absolute;
+    top: 35%;
+    left: 21%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 40%;
+    max-height: none;
+    opacity: 1;
+    z-index: 4;
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0);
+}
+
+/* Animação da linha14  */
+.encontro.active .line14 {
+    animation: revealLineFrase 1.5s ease-in-out 1.8s forwards;
+}
+
+/* ANIMAÇÃO NORMAL (de cima para baixo) */
+@keyframes revealLineFrase {
+    from {
+        clip-path: inset(0 0 100% 0);
+    }
+    to {
+        clip-path: inset(0 0 0% 0);
+    }
+}
+
+/* texto central */
+.encontro-hint {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-garamond);
+    font-style: italic;
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-body);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+    z-index: 4;
+}
+
+#btn-pag11 {
+    display: none;
+}
+
+#btn-pag12 {
+    display: none;
+}

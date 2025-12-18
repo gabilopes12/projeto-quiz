@@ -1,0 +1,86 @@
+/* 3) Start */
+
+/* A página start só mostra flex quando está ativa */
+.start.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+body {
+    background: url("/img/fundo.png") center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Linha SVG - preparada para manipulação dinâmica */
+.start-line {
+    position: absolute;
+    top: 35%;
+    left: 55%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 70%;
+    max-height: 100vh;
+    opacity: 1;
+    z-index: 100;
+    pointer-events: none; /* MUDA de auto para none */
+}
+
+/* Máscara para revelar a linha gradualmente */
+.start-line {
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0s;
+}
+
+/* Quando a página fica ativa, a linha é revelada de cima para baixo */
+.start.active .start-line {
+    animation: revealLine 2.5s ease-in-out 0.3s forwards;
+}
+
+@keyframes revealLine {
+    from {
+        clip-path: inset(0 0 100% 0);
+    }
+    to {
+        clip-path: inset(0 0 0% 0);
+    }
+}
+
+/* retângulo arredondado + conteúdo */
+.start-content {
+    padding: 10% 35%;
+    position: relative;
+    z-index: 1;
+}
+
+/* imagem com estrela + círculo */
+.start-img {
+    display: block;
+    max-height: 260px;
+    height: auto;
+    width: auto;
+    transform: translate(-16%, -15%);
+}
+
+/* texto START centrado dentro do círculo */
+.start-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    font-family: var(--font-optima);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-title-main);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+    transition: transform 0.2s ease;
+    pointer-events: auto;
+    cursor: pointer;
+    user-select: none;
+    z-index: 200;
+}
+
+.start-content:hover .start-label {
+    transform: translate(-50%, -45%) scale(1.05);
+}
