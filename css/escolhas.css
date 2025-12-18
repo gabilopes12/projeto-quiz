@@ -217,6 +217,7 @@
     right: 50%;
     height: 62%;
     transform: rotate(15deg);
+    z-index: 5;
 }
 
 /* PAG9 - Vídeos */
