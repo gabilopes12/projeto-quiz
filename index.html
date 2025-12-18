@@ -471,7 +471,7 @@
             e da proteção.
         </p>
 
-        <img src="img/empresario.png" alt="Empresário" class="resultado-empresario-img">
+        <img src="img/empresario1.png" alt="Empresário" class="resultado-empresario-img">
 
         <!-- chapéus decorativos -->
         <img src="img/SVG/chapeu.svg" alt="" class="hat hat-top-left">
@@ -482,6 +482,128 @@
 
     </div>
 </section>
+
+<<script>
+    // Dados do quiz incorporados (alinhado com o HTML)
+    const quizData = {
+        "paginas": [
+            {
+                "id": "pag1-pag2",
+                "tipo": "apresentacao",
+                "titulo": "O PRIMEIRO SOFRIMENTO",
+                "autor": "FRANZ KAFKA",
+                "subtitulo": "QUIZ"
+            },
+            {
+                "id": "pag3",
+                "tipo": "inicio",
+                "label": "START"
+            },
+            {
+                "id": "pag4",
+                "tipo": "excerto",
+                "numero": 1,
+                "texto": "Passava o dia e a noite no trapézio [...] apenas para alcançar o perfeccionismo"
+            },
+            {
+                "id": "pag5",
+                "tipo": "pergunta",
+                "numero": 2,
+                "pergunta": "O que te define melhor?",
+                "opcoes": [
+                    {
+                        "letra": "A",
+                        "texto": "Sou alguém que precisa do seu próprio espaço para se sentir bem",
+                        "personagem": "trapezista"
+                    },
+                    {
+                        "letra": "B",
+                        "texto": "Sou alguém que se sente responsável por manter tudo organizado",
+                        "personagem": "empresario"
+                    }
+                ]
+            },
+            {
+                "id": "pag6",
+                "tipo": "excerto",
+                "numero": 3,
+                "texto": "As viagens destruíam os nervos do trapezista [...] o empresário fazia tudo para o proteger"
+            },
+            {
+                "id": "pag7",
+                "tipo": "pergunta",
+                "numero": 4,
+                "pergunta": "O que te acontece em momentos instáveis?",
+                "opcoes": [
+                    {
+                        "letra": "A",
+                        "texto": "Fecho-me no que conheço. Preciso de estabilidade para não me perder",
+                        "personagem": "trapezista"
+                    },
+                    {
+                        "letra": "B",
+                        "texto": "Tomo iniciativa. Reorganizo o que for preciso para manter o controlo",
+                        "personagem": "empresario"
+                    }
+                ]
+            },
+            {
+                "id": "pag8",
+                "tipo": "excerto",
+                "numero": 5,
+                "texto": "Com apenas esta barra nas mãos... como posso eu viver!"
+            },
+            {
+                "id": "pag9",
+                "tipo": "pergunta",
+                "numero": 6,
+                "pergunta": "Quando alguém revela fragilidade, tu?",
+                "opcoes": [
+                    {
+                        "letra": "A",
+                        "texto": "Refletes. Empatizas. Aproximas-te pelo silêncio e compreensão.",
+                        "personagem": "trapezista"
+                    },
+                    {
+                        "letra": "B",
+                        "texto": "Reorganizo tudo de imediato Procuro soluções práticas e faço acontecer",
+                        "personagem": "empresario"
+                    }
+                ]
+            },
+            {
+                "id": "pag10",
+                "tipo": "encontro"
+            },
+            {
+                "id": "pag11",
+                "tipo": "resultado-preparacao",
+                "personagem": "trapezista"
+            },
+            {
+                "id": "pag12",
+                "tipo": "resultado-preparacao",
+                "personagem": "empresario"
+            },
+            {
+                "id": "pag14",
+                "tipo": "resultado",
+                "personagem": "trapezista",
+                "titulo": "Trapezista",
+                "descricao": "Tu identificas-te com a introspecção, a necessidade de espaço, a busca de perfeição. A tua força vem do silêncio e da profundidade."
+            },
+            {
+                "id": "pag15",
+                "tipo": "resultado",
+                "personagem": "empresario",
+                "titulo": "Empresário",
+                "descricao": "Tu identificas-te com a gestão, o cuidado prático, o sentido de responsabilidade. A tua força vem da estrutura e da proteção."
+            }
+        ]
+    };
+
+    window.quizData = quizData;
+</script>
 
 <script src="js/bilhete.js"></script>
 <script src="js/clickEscolha.js"></script>

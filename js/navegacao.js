@@ -10,14 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // PRÉ-CARREGA AS IMAGENS DE FUNDO
     const fundoNormal = new Image();
-    fundoNormal.src = '/img/fundo.png';
+    fundoNormal.src = '../img/fundo.png';
     const fundoAmarelo = new Image();
-    fundoAmarelo.src = '/img/fundoAmarelo.png';
+    fundoAmarelo.src = '../img/fundoAmarelo.png';
     console.log('🖼️ Fundos pré-carregados');
 
-    // ═══════════════════════════════════════════════════════
     // FUNÇÃO AUXILIAR PARA NAVEGAR ENTRE PÁGINAS
-    // ═══════════════════════════════════════════════════════
     function navegarPara(fromPageId, toPageId) {
         const fromPage = document.getElementById(fromPageId);
         const toPage = document.getElementById(toPageId);
@@ -31,10 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Muda o fundo se for página .frase ou .escolhas
         if (toPage.classList.contains('frase') || toPage.classList.contains('escolhas')) {
-            document.body.style.backgroundImage = 'url("/img/fundoAmarelo.png")';
+            document.body.style.backgroundImage = 'url("../img/fundoAmarelo.png")';
             console.log('🎨 Fundo mudado para: fundoAmarelo.png');
         } else {
-            document.body.style.backgroundImage = 'url("/img/fundo.png")';
+            document.body.style.backgroundImage = 'url("../img/fundo.png")';
             console.log('🎨 Fundo mudado para: fundo.png');
         }
 
@@ -46,9 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Ativa a página de destino
         toPage.classList.add('active');
 
-        // ═══════════════════════════════════════════════════════
         // ATUALIZA O CÍRCULO ATIVO
-        // ═══════════════════════════════════════════════════════
         const pageMap = {
             'pag4': 1,
             'pag5': 2,
@@ -76,9 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('✅ Navegação completa!');
     }
 
-    // ═══════════════════════════════════════════════════════
     // PAG3 (START) → PAG4
-    // ═══════════════════════════════════════════════════════
     const startBtn = document.getElementById('start-btn');
     if (startBtn) {
         startBtn.addEventListener('click', function(e) {
@@ -93,9 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('✅ Botão START configurado');
     }
 
-    // ═══════════════════════════════════════════════════════
     // PAG11 → PAG14 (Trapezista)
-    // ═══════════════════════════════════════════════════════
     const btnPag11 = document.getElementById('btn-pag11');
     if (btnPag11) {
         btnPag11.addEventListener('click', function() {
@@ -112,9 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('✅ Botão btn-pag11 configurado');
     }
 
-    // ═══════════════════════════════════════════════════════
     // PAG12 → PAG15 (Empresário)
-    // ═══════════════════════════════════════════════════════
     const btnPag12 = document.getElementById('btn-pag12');
     if (btnPag12) {
         btnPag12.addEventListener('click', function() {
@@ -131,9 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('✅ Botão btn-pag12 configurado');
     }
 
-    // ═══════════════════════════════════════════════════════
     // Botões "next page" - navegação sequencial
-    // ═══════════════════════════════════════════════════════
     const botoesNavegacao = [
         { btnId: 'btn-pag4', fromPage: 'pag4', toPage: 'pag5' },
         { btnId: 'btn-pag5', fromPage: 'pag5', toPage: 'pag6' },
@@ -154,9 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ═══════════════════════════════════════════════════════
     // PAG9 → PAG10
-    // ═══════════════════════════════════════════════════════
     const btnPag9 = document.getElementById('btn-pag9');
     if (btnPag9) {
         btnPag9.addEventListener('click', function() {
@@ -166,9 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('✅ Botão btn-pag9 configurado');
     }
 
-    // ═══════════════════════════════════════════════════════
     // PAG10 → PAG11 ou PAG12 (baseado nas escolhas)
-    // ═══════════════════════════════════════════════════════
     const btnPag10 = document.getElementById('btn-pag10');
     if (btnPag10) {
         btnPag10.addEventListener('click', function() {

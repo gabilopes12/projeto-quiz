@@ -52,9 +52,9 @@
 
 .resultado-empresario-img {
     position: absolute;
-    bottom: 8%;
-    right: 10%;
-    height: 80%;
+    bottom: 3%;
+    right: 0;
+    height: 105%;
     width: auto;
     transform: scaleX(-1);
 }
