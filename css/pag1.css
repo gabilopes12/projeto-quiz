@@ -1,6 +1,6 @@
 /* 1) Bilheteira - BASE (Desktop) */
 .ticket-booth {
-    background: url("/img/fundo.png") center center no-repeat;
+    background: url("../img/fundo.png") center center no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
@@ -204,9 +204,7 @@
     filter: brightness(1.2);
 }
 
-/* ========================================
-   RESPONSIVE - MOBILE
-   ======================================== */
+/* RESPONSIVE - MOBILE */
 
 @media (max-width: 768px) {
     .booth-title {

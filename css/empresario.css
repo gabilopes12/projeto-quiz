@@ -1,5 +1,5 @@
 .resultado-empresario {
-    background: url("/img/fundoEmpresario.png") center center no-repeat;
+    background: url("../img/fundoEmpresario.png") center center no-repeat;
     background-size: cover;
     display: none;
     align-items: center;
@@ -74,7 +74,7 @@
 
 /* Animações de explosão específicas para cada chapéu */
 
-/* Top Left: BOOOOM e vai para top 16%, left 40% */
+/* Top Left */
 @keyframes explode-hat-top-left {
     0% {
         top: 50%;
@@ -123,7 +123,7 @@
     }
 }
 
-/* Bottom Left: BOOOOM e vai para bottom 12%, left 18% */
+/* Bottom Left */
 @keyframes explode-hat-bottom-left {
     0% {
         top: 50%;

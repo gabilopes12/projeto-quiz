@@ -68,7 +68,7 @@ section.screen.oculta {
 .frase-steps li {
     width: 50px;
     height: 50px;
-    background: url("/img/ilho.png") center center no-repeat;
+    background: url("../img/ilho.png") center center no-repeat;
     background-size: contain;
     display: flex;
     align-items: center;

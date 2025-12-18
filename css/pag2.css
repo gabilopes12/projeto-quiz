@@ -306,7 +306,7 @@
 .transition-overlay {
     position: fixed;
     inset: 0;
-    background: url("/img/fundo.png") center center no-repeat;
+    background: url("../img/fundo.png") center center no-repeat;
     background-size: cover;
     z-index: 9999;
     pointer-events: none;
@@ -324,7 +324,7 @@
 }
 
 body {
-    background: url("/img/fundo.png") center center no-repeat;
+    background: url("../img/fundo.png") center center no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }

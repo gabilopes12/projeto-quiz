@@ -9,7 +9,7 @@
 }
 
 body {
-    background: url("/img/fundo.png") center center no-repeat;
+    background: url("../img/fundo.png") center center no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }

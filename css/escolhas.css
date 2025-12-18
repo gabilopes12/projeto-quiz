@@ -1,5 +1,5 @@
 .escolhas {
-    background: url("/img/fundoAmarelo.png") center center no-repeat;
+    background: url("../img/fundoAmarelo.png") center center no-repeat;
     background-size: cover;
     display: none;
     align-items: center;
@@ -173,8 +173,6 @@
 }
 
 /* VIDEOS */
-
-/* Vídeos base - propriedades comuns */
 .video-escolha {
     position: absolute;
     width: auto;

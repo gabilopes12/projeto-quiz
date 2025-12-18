@@ -1,5 +1,5 @@
 .resultado-trapezista {
-    background: url("/img/fundoTrapezista.png") center center no-repeat;
+    background: url("../img/fundoTrapezista.png") center center no-repeat;
     background-size: cover;
     display: none;
     align-items: center;

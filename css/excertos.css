@@ -16,7 +16,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url("/img/fundoAmarelo.png") center center no-repeat;
+    background: url("../img/fundoAmarelo.png") center center no-repeat;
     background-size: cover;
     z-index: -1; /* Atrás de tudo na página frase */
     pointer-events: none;
