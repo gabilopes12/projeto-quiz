@@ -186,40 +186,49 @@
 .video-escolha {
     position: absolute;
     width: auto;
-    height: 45%;
-    z-index: 2;
     object-fit: contain;
     pointer-events: none;
 }
 
 .video-pag5-esq {
-    top: 30%;
-    left: 17%;
+    top: 30.9%;
+    left: 44.1%;
+    z-index: 4;
+    height: 40%;
 }
 
 .video-pag5-dir {
-    top: 30%;
-    right: 17%;
+    top: 54%;
+    right: 64%;
+    z-index: 10;
+    height: 52%;
 }
 
 /* PAG7 - Vídeos */
 .video-pag7-esq {
     top: 30%;
-    left: 17%;
+    left: 13%;
+    height: 55%;
+    transform: scaleX(-1);
 }
 
 .video-pag7-dir {
-    top: 30%;
-    right: 17%;
+    top: -8%;
+    right: 50%;
+    height: 62%;
+    transform: rotate(15deg);
 }
 
 /* PAG9 - Vídeos */
 .video-pag9-esq {
-    top: 30%;
-    left: 17%;
+    top: 4.5%;
+    left: -6%;
+    height: 47%;
+    z-index: 4;
 }
 
 .video-pag9-dir {
-    top: 30%;
-    right: 17%;
+    top: 40%;
+    right: 12%;
+    height: 55%;
 }
